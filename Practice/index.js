@@ -1,0 +1,5 @@
+const fs=require("fs")
+const cheerio=require("cheerio")
+let htmlkadata=fs.readFileSync("./index.html","utf-8")
+let myDocument=cheerio.load(htmlkadata)
+console.log(myDocument("h1").text())
