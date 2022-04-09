@@ -10,6 +10,8 @@ function allmatches(matchlink){
 function processData(html){
     let myDocument=cheerio.load(html)
     let alllinks=myDocument(".ds-flex.ds-mx-4 span:nth-child(3) a")
+    fs.mkdirSync("./IPL")
+    console.log(alllinks.length)
     for(let i=0;i<alllinks.length;i++){
         match("https://www.espncricinfo.com"+alllinks[i].attribs["href"])
     }
